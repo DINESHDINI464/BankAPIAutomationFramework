@@ -1,0 +1,30 @@
+package com.api.base;
+
+import static io.restassured.RestAssured.*;
+
+import com.api.models.requests.LoginRequest;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class BaseService { // wrapper for rest assured (Abstraction)
+	// define BaseURi, request , response in this
+
+	private static final String BASE_URL = "http://64.227.160.186:8080";
+	private RequestSpecification requestSpecification;
+
+	public BaseService() {
+		requestSpecification = given().baseUri(BASE_URL);
+
+	}
+
+	// We used Object for payload bcoz of loosely coupling/polymorphism. postreq
+	// method should use for others also, so we have to use parent class object
+	// called object
+	protected Response postRequest(Object payload, String endPoint) {
+		return requestSpecification.contentType(ContentType.JSON).body(payload).post(endPoint);
+
+	}
+
+}
