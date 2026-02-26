@@ -1,16 +1,16 @@
 package com.api.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.api.base.AuthService;
 import com.api.models.requests.LoginRequest;
 import com.api.models.response.LoginResponse;
-
 import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+@Listeners(com.api.listeners.TestListener.class)
 public class LoginAPITest2 {
 	@Test(description = "Test the login api is working or not: ")
 	public void loginTest() {
