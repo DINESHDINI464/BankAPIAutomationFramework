@@ -24,7 +24,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven excute bankapi RestAssured
-      run: mvn clean test -Dsite=suite -x
+      run: mvn clean test -Dsuite=suite -x
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
