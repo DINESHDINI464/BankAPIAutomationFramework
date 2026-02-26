@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-25T23:20:32 IST" name="Default suite" finished-at="2026-02-25T23:20:42 IST" duration-ms="10821">
+  <suite started-at="2026-02-26T12:14:51 IST" name="Default suite" finished-at="2026-02-26T12:14:55 IST" duration-ms="4644">
     <groups>
     </groups>
-    <test started-at="2026-02-25T23:20:32 IST" name="Default test" finished-at="2026-02-25T23:20:42 IST" duration-ms="10821">
-      <class name="com.api.tests.ForgotPasswordTest">
-        <test-method signature="forgotPasswordTest()[pri:0, instance:com.api.tests.ForgotPasswordTest@5c33f1a9]" started-at="2026-02-25T23:20:32 IST" name="forgotPasswordTest" description="Test the login api is working or not: " finished-at="2026-02-25T23:20:42 IST" duration-ms="10741" status="PASS">
+    <test started-at="2026-02-26T12:14:51 IST" name="Default test" finished-at="2026-02-26T12:14:55 IST" duration-ms="4644">
+      <class name="com.api.tests.GetProfileRequestTest">
+        <test-method signature="getProfileInfotest()[pri:0, instance:com.api.tests.GetProfileRequestTest@5c33f1a9]" started-at="2026-02-26T12:14:51 IST" name="getProfileInfotest" description="verify user profile get api:" finished-at="2026-02-26T12:14:55 IST" duration-ms="4531" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- forgotPasswordTest -->
-      </class> <!-- com.api.tests.ForgotPasswordTest -->
+        </test-method> <!-- getProfileInfotest -->
+      </class> <!-- com.api.tests.GetProfileRequestTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -16,7 +16,7 @@ public class AccountCreationTest {
 	@Test(description = "Test the Account signup is working or not: ")
 	public void createAccountTest() {
 
-		SignUpRequest signUpRequest = new SignUpRequest.Builder().firstName("Dinesh").email("abc@gmail.com")
+		SignUpRequest signUpRequest = new SignUpRequest.Builder().firstName("Dinesh1").email("abcd@gmail.com")
 				.lastName("s").mobileNumber("8588756687").password("password123").build();
 
 		AuthService authService = new AuthService();

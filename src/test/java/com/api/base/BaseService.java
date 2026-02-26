@@ -16,7 +16,10 @@ public class BaseService { // wrapper for rest assured (Abstraction)
 
 	public BaseService() {
 		requestSpecification = given().baseUri(BASE_URL);
-
+}
+	
+	protected void setAuthToken(String token) {
+		requestSpecification.header("Authorization", "Bearer "+token);
 	}
 
 	// We used Object for payload bcoz of loosely coupling/polymorphism. postreq
@@ -24,7 +27,11 @@ public class BaseService { // wrapper for rest assured (Abstraction)
 	// called object
 	protected Response postRequest(Object payload, String endPoint) {
 		return requestSpecification.contentType(ContentType.JSON).body(payload).post(endPoint);
-
+}
+	
+	protected Response getRequest(String endpoint) {
+		return requestSpecification.get(endpoint);
 	}
+	
 
 }
