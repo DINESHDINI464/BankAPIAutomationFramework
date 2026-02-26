@@ -6,6 +6,11 @@ on:
    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  schedule:
+    # Runs twice: daily at 2 AM UTC and Monday/Thursday at 2 PM UTC
+    - cron: '0 18 * * *'     # Daily at 18 PM UTC/11:30PM IST
+    - cron: '0 3 * * 1,4'  # Monday and Thursday at 3 PM UTC/8:30AM IST
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 jobs:
   build:
@@ -14,7 +19,8 @@ jobs:
     permissions:
       contents: read
       packages: write
-
+      issues: write
+      checks: write
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -27,6 +33,24 @@ jobs:
 
     - name: Build with Maven excute bankapi RestAssured
       run: mvn clean test -Dsuite=suite -X
+
+    - name: Upload a Build Artifact
+      if: always()
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: Logs
+        path: |
+          test-output/reports/
+          target/surefire-reports/
+          logs/
+    
+    - name: Publish Test Report
+      if: always()
+      uses: dorny/test-reporter@v1
+      with:
+        name: TestNG Results
+        path: target/surefire-reports/junitreports/TEST-*.xml
+        reporter: java-junit
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
