@@ -31,8 +31,8 @@ public class LoggingFilter implements Filter {
 
 	public void logResponse(Response response) {
 		logger.info("BASEURL:" + response.getStatusCode());
-		logger.info("Request Payload:" + response.headers());
-		logger.info("Request Header:" + response.getBody().prettyPrint());
+		logger.info("Request Header:" + response.headers());
+		logger.info("Request Payload:" + response.getBody().prettyPrint());
 	}
 
 }
