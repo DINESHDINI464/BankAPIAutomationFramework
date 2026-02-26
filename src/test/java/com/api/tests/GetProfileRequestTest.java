@@ -6,6 +6,7 @@ import com.api.base.AuthService;
 import com.api.base.UserProfileManagementService;
 import com.api.models.requests.LoginRequest;
 import com.api.models.response.LoginResponse;
+import com.api.models.response.UserProfileResponse;
 
 import io.restassured.response.Response;
 
@@ -21,7 +22,8 @@ public class GetProfileRequestTest {
 
 		UserProfileManagementService userProfile = new UserProfileManagementService();
 		response = userProfile.getProfile(loginResponse.getToken());
-		System.out.println(response.asPrettyString());
+		UserProfileResponse userProfileResponse = response.as(UserProfileResponse.class);
+		System.out.println(userProfileResponse.getUsername());
 
 	}
 
