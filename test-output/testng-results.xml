@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-26T12:57:47 IST" name="Default suite" finished-at="2026-02-26T12:57:51 IST" duration-ms="4280">
+  <suite started-at="2026-02-26T14:04:45 IST" name="Default suite" finished-at="2026-02-26T14:04:50 IST" duration-ms="4230">
     <groups>
     </groups>
-    <test started-at="2026-02-26T12:57:47 IST" name="Default test" finished-at="2026-02-26T12:57:51 IST" duration-ms="4280">
-      <class name="com.api.tests.GetProfileRequestTest">
-        <test-method signature="getProfileInfotest()[pri:0, instance:com.api.tests.GetProfileRequestTest@5c33f1a9]" started-at="2026-02-26T12:57:47 IST" name="getProfileInfotest" description="verify user profile get api:" finished-at="2026-02-26T12:57:51 IST" duration-ms="4218" status="PASS">
+    <test started-at="2026-02-26T14:04:45 IST" name="Default test" finished-at="2026-02-26T14:04:50 IST" duration-ms="4230">
+      <class name="com.api.tests.UpdateProfileTest">
+        <test-method signature="updateProfileTest()[pri:0, instance:com.api.tests.UpdateProfileTest@49139829]" started-at="2026-02-26T14:04:45 IST" name="updateProfileTest" description="validating PUT user profile API" finished-at="2026-02-26T14:04:50 IST" duration-ms="4178" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getProfileInfotest -->
-      </class> <!-- com.api.tests.GetProfileRequestTest -->
+        </test-method> <!-- updateProfileTest -->
+      </class> <!-- com.api.tests.UpdateProfileTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
